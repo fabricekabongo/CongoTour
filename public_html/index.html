@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app='congotour'>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Le premier site touristique congolais</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style> 
+            .espace{
+                height: 0;
+            }
+            .contenu{
+                background: none;
+                opacity: 1;
+                color: black;
+            }
+            .logo{
+                font-size: 5em;
+            }
+            h1{
+                background: black;
+
+            }
+            html,body{
+                height: 100%;
+                width: 100%;
+                background: white;
+            }
+            .fond-bleu {
+                color: white;
+                background: #00ddff fixed;
+                height: 100%;
+                border-left: #dddd00 solid 5px;
+                border-right: #dd0011 solid 5px;
+            }
+            .fond-bleu h1{
+                font-size: xx-large;
+                font-weight: bolder;
+                color: #dddd00;
+            }
+            .fond-bleu h1 small{
+                color: #dd0011;
+            }
+            .fond-jaune{
+                background: #ffff44 fixed;
+                height: auto;
+                border-left: #dd0011 solid 5px;
+                border-right: #0099dd solid 5px;
+            }
+            .fond-jaune h1{
+                font-size: xx-large;
+                font-weight: bolder;
+                color: #dd0011;
+            }
+            .fond-jaune h1 small{
+                color: #0099dd;
+            }
+            .fond-red{
+                background: #ff0033 fixed;
+                height: 100%;
+                border-left: #0099dd solid 5px;
+                border-right: #dddd00 solid 5px;
+            }
+            .fond-red h1{
+                font-size: xx-large;
+                font-weight: bolder;
+                color: #0099dd;
+            }
+            .fond-red h1 small{
+                color: #dddd00;
+            }
+            .btn-primary {
+                color: #ffffff;
+                background-color: #0099dd;
+                border-color: #357ebd;
+            }
+
+            .btn-warning {
+                color: #ffffff;
+                background-color: #dddd00;
+                border-color: #dddd00;
+            }
+            .btn-danger {
+                color: #ffffff;
+                background-color: #dd0011;
+                border-color: #dd0011;
+            }
+            @media (min-width: 768px) {
+
+                .fond-bleu .logo{
+                    color: #00ddff;
+                    border-left: #00ddff solid 5px;
+                }
+                .espace{
+                    height: 100px;
+                }
+                .fond-bleu {
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: #0099dd 20px solid;
+                    height: 100%;
+                }
+                .fond-bleu .contenu{ 
+                    border-left: #dddd00 solid 5px;
+                    border-right: #dd0011 solid 5px;
+                }
+                .fond-jaune{
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: #dddd00 20px solid;
+                    height: 100%;
+                }
+                .fond-jaune .logo{
+                    color: #ffff44;
+                    border-left: #ffff44 solid 5px;
+                }
+                .fond-jaune .contenu{ 
+                    border-left: #dd0011 solid 5px;
+                    border-right: #0099dd solid 5px;
+                }
+                .fond-red{
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: #dd0011 20px solid;
+                    height: 100%;
+                }
+                .fond-red .logo{
+                    color: #ff0033;
+                    border-left: #ff0033 solid 5px;
+                }
+                .fond-red .contenu{ 
+                    border-left: #0099dd solid 5px;
+                    border-right: #dddd00 solid 5px;
+                }
+                .contenu{
+                    background: black;
+                    opacity: 1;
+                    color: white;
+                }
+                .contenu p{
+                    font-size: small;
+                } 
+            }
+
+            @media (min-width: 992px) {
+
+                .fond-bleu .logo{
+                    color: #00ddff;
+                    border-left: #00ddff solid 5px;
+                }
+                .espace{
+                    height: 200px;
+                }
+                .fond-bleu {
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: #0099dd 20px solid;
+                    height: 100%;
+                }
+                .fond-bleu .contenu{ 
+                    border-left: #dddd00 solid 5px;
+                    border-right: #dd0011 solid 5px;
+                }
+                .fond-jaune{
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: #dddd00 20px solid;
+                    height: 100%;
+                }
+                .fond-jaune .logo{
+                    color: #ffff44;
+                    border-left: #ffff44 solid 5px;
+                }
+                .fond-jaune .contenu{ 
+                    border-left: #dd0011 solid 5px;
+                    border-right: #0099dd solid 5px;
+                }
+                .fond-red{
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: #dd0011 20px solid;
+                    height: 100%;
+                }
+                .fond-red .logo{
+                    color: #ff0033;
+                    border-left: #ff0033 solid 5px;
+                }
+                .fond-red .contenu{ 
+                    border-left: #0099dd solid 5px;
+                    border-right: #dddd00 solid 5px;
+                }
+                .contenu{
+                    background: black;
+                    opacity: 1;
+                    color: white;
+                }
+                .contenu p{
+                    font-size: medium;
+                } 
+            }
+
+            @media (min-width: 1200px) {
+
+                .fond-bleu .logo{
+                    color: #00ddff;
+                    border-left: #00ddff solid 5px;
+                }
+                .espace{
+                    height: 300px;
+                }
+                .fond-bleu {
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: #0099dd 20px solid;
+                    height: 100%;
+                }
+                .fond-bleu .contenu{ 
+                    border-left: #dddd00 solid 5px;
+                    border-right: #dd0011 solid 5px;
+                }
+                .fond-jaune{
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: #dddd00 20px solid;
+                    height: 100%;
+                }
+                .fond-jaune .contenu{ 
+                    border-left: #dd0011 solid 5px;
+                    border-right: #0099dd solid 5px;
+                }
+                .fond-red{
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: #dd0011 20px solid;
+                    height: 100%;
+                }
+                .fond-red .logo{
+                    color: #ff0033;
+                    border-left: #ff0033 solid 5px;
+                }
+                .fond-red .contenu{ 
+                    border-left: #0099dd solid 5px;
+                    border-right: #dddd00 solid 5px;
+                }
+                .contenu{
+                    background: black;
+                    opacity: 1;
+                    color: white;
+                }
+                .contenu p{
+                    font-size: large;
+                } 
+                .hide{
+                    display: none;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div ng-view style="height: 100%;">
+
+        </div>
+        <div butterbar id="loading">Loading...</div>
+
+        <script src="js/libs/jquery.js" type="text/javascript"></script>
+        <script src="js/libs/angular.min.js" type="text/javascript"></script>
+        <script src="js/libs/google-plus-signin.js" type="text/javascript"></script>
+        <script src="js/libs/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/libs/ui-bootstrap-tpls-0.10.0.min.js" type="text/javascript"></script>
+        <script src="js/provinces.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/controllers.js" type="text/javascript"></script>
+    </body>
+</html>

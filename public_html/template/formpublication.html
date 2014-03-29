@@ -1,0 +1,72 @@
+<style>
+    .fond-jaune{
+        height: auto;
+        min-height: 100%;
+    }
+    .panel{
+        border-bottom: #0099dd solid 10px;
+    }
+    .navbar .container{
+        border-bottom: #dddd00 solid 0.5em;
+    }
+    blockquote{
+        border-left: #dddd00 solid 0.5em;
+    }
+</style>
+<div class="fond-bleu">
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Congo's Tour</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+                        <li class="active"><a href="#/provinces" ><span class="glyphicon glyphicon-plane"></span> D&eacute;couvrez le congo</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                <ul class="breadcrumb">
+                    <li><a href="#/provinces">Provinces</a></li>
+                    <li>{{ province.nom }}</li>
+                    <li><a href="#/villes/{{ villeid }}">{{ ville.nom }}</a></li>
+                    <li class="active">nouvelle publication</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <form name="formprovince" action="#">
+                    <label>Image:</label>
+                    <input class="form-control" on-progress="progress($evt)" on-read-file="getContent($fileContent)" type="file" required /> 
+                    <label>Description</label>
+                    <textarea cols="20" rows="5" class="form-control" ng-model="description" required></textarea>
+                    <input class="btn btn-default btn-primary" value="enregistrer" type="button" ng-click="ajouterPublication()" />
+                    <input class="btn btn-default" type="reset"/>
+                </form>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ loading }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ loading }}%;">
+                        {{ loading }}%
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

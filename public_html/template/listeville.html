@@ -1,0 +1,68 @@
+<style>
+    .fond-bleu{
+        height: auto;
+        min-height: 100%;
+    }
+    .panel{
+        border-bottom: #0099dd solid 10px;
+    }
+    .navbar .container{
+        border-bottom: #0099dd solid 0.5em;
+    }
+</style>
+<div class="fond-bleu">
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Congo's Tour</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+                        <li class="active"><a href="#/provinces" ><span class="glyphicon glyphicon-plane"></span> D&eacute;couvrez le congo</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                <ul class="breadcrumb">
+                    <li class="active">Provinces</li>
+                </ul>
+            </div>
+        </div>
+        <br />
+        <div class="row" ng-repeat="item in provinces">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <img src="{{ item.province.image }}" height="25px" width="25px" />
+                            {{ item.province.nom }}
+                        </h3>
+                        <a href="#/provinces/{{ item.province.url }}/ajouter" class="btn btn-info pull-right">
+                            Ajouter une localit&eacute;
+                        </a>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li ng-repeat='itemv in item.villes'>
+                                <a href="#/villes/{{ itemv.id }}">{{ itemv.ville.nom }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

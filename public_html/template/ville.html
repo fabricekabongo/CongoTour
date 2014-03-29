@@ -1,0 +1,65 @@
+<style>
+    .fond-red{
+        min-height: 100%;
+        height: auto;
+    }
+    .navbar .container{
+        border-bottom: #dd0011 solid 0.5em;
+    }
+</style>
+<div class="fond-red">
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Congo's Tour</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+                        <li class="active"><a href="#/provinces" ><span class="glyphicon glyphicon-plane"></span> D&eacute;couvrez le congo</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                <ul class="breadcrumb">
+                    <li><a href="#/provinces">Provinces</a></li>
+                    <li>{{ province.nom }}</li>
+                    <li class="active">{{ ville.nom }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <a class="btn btn-primary btn-lg" href="#/villes/{{ villeid }}/publier">Publier une image</a>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div ng-repeat="item in ville.publications" class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
+                <div class="thumbnail" style="margin-bottom: 10px;">
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <a href="#/publications/{{ item.id }}">
+                                <img class="img-rounded" title="{{ item.publication.description }}" width="100%" ng-src="{{ item.publication.image }}" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<script>
+</script>
